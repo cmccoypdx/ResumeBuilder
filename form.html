@@ -36,9 +36,15 @@
           </div>
         </div>
 
-        <div class="mb-3">
-          <label for="email">Email</label>
-          <input type="text" class="form-control" id="email" placeholder="jobhunter@example.com" value="">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" placeholder="jobhunter@example.com" value="">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="phone">Phone #</label>
+            <input type="number" class="form-control" id="phone" placeholder="503-555-5555" value="">
+          </div>
         </div>
 
         <div class ="mb-3">
@@ -357,7 +363,7 @@
               </div>
             </div>
             <label for="desc0">Description <span class="text-muted">(Optional)</span></label>
-            <textarea class="form-control mb-3" id="desc0" placeholder="GPA, honors, club memberships, etc." value=""></textarea>          
+            <textarea class="form-control mb-3" id="desc0" rows="2"placeholder="GPA, honors, club memberships, etc." value=""></textarea>          
           </div>
         </div>
         <div class="row">
@@ -367,6 +373,43 @@
             <button class="btn btn-sq btn-info float-right" id="addSchool" type="button">+</button>
           </div>
         </div>
+
+        <h4 class="mb-3">References</h4>
+        <div id="references">
+          <div id="ref0">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="first0">First name</label>
+                <input type="text" class="form-control" id="first0" placeholder="First" value="">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for "last0">Last name</label>
+                <input type="text" class="form-control" id="last0" placeholder="Last" value="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="email0">Email address</label>
+                <input type="text" class="form-control" id="email0" placeholder="formerboss@old.org" value="">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="phone0">Phone #</label>
+                <input type="number" class="form-control" id="phone0" placeholder="555-555-5555" value="">
+              </div>
+            </div>
+            <label for="about0">About</label>
+            <input type="text" class="form-control mb-3" id="about0" placeholder="Very brief description of reference" value="">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-11 mb-3">
+          </div>
+          <div class="col-md-1 mb-3">
+            <button class="btn btn-sq btn-info float-right" id="addRef" type="button">+</button>
+          </div>
+        </div>
+
 
         <div class="row">
           <div class="col-md-5 mb-3">
@@ -388,6 +431,7 @@
   <script>
     var numJobs = 1;
     var numSchools = 1;
+    var numRefs = 1;
     $('#addJobExp').on('click', (e) => {
       var newInput = '<div class="mb-3 jobInput" id="jobInput' + numJobs +
         '"><div class="row"><div class="col-md-6 mb-3"><label for="employer' + numJobs + 
@@ -406,10 +450,26 @@
         '" placeholder="RB University" value=""></div><div class="col-md-6 mb-3"><label for="degree'
       + numSchools + '">Degree</label><input type="text" class="form-control" id="degree' + 
         numSchools + '" placeholder="Bachelor\'s of Job Hunting" value=""></div></div><label for="desc' +
-        numSchools + '">Description <span class="text-muted">(Optional)</span></label><textarea class="form-control mb-3" id="desc' + 
-        numSchools + '" placeholder="GPA, honors, club memberships, etc." value=""></textarea></div>'
+        numSchools + '">Description <span class="text-muted">(Optional)</span></label><textarea class="form-control mb-3" rows="2" id="desc' + 
+        numSchools + '" placeholder="GPA, honors, club memberships, etc." value=""></textarea></div>';
       $('#education').append(newInput);
       numSchools++;
+    });
+    $('#addRef').on('click', (e) => {
+      console.log(numRefs);
+      var newInput = '<div id="ref' + numRefs + '"><div class="row"><div class="col-md-6 mb-3"><label for="first'
+        + numRefs + '">First name</label><input type="text" class="form-control" id="first' + numRefs +
+        '" placeholder="First" value=""></div><div class="col-md-6 mb-3"><label for "last' + numRefs +
+        '">Last name</label><input type="text" class="form-control" id="last' + 
+        numRefs + '" placeholder="Last" value=""></div></div><div class="row"><div class="col-md-6 mb-3"><label for="email'
+      + numRefs + '">Email address</label><input type="text" class="form-control" id="email' + 
+        numRefs + '" placeholder="formerboss@old.org" value=""></div><div class="col-md-6 mb-3"><label for="phone'
+      + '">Phone #</label><input type="number" class="form-control" id="phone' + numRefs + 
+        '" placeholder="555-555-5555" value=""></div></div><label for="about' + numRefs +
+        '">About</label><input type="text" class="form-control mb-3" id="about' + numRefs +
+        '" placeholder="Very brief description of reference" value=""></div>';
+      $('#references').append(newInput);
+      numRefs++;
     });
  
   </script>
