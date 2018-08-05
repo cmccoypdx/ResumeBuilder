@@ -24,7 +24,7 @@
     <div class="container">
       <div class ="py-5 text-center">
         <h2>Resume Builder</h2>
-        <p class="lead">Enter your details here to build your custom web resume! If a field
+        <p class="lead">Enter your details here to build your custom web resume. If a field
         is not applicable to you, leave it blank.</p>
       </div>
       <h4 class="mb-3">Basic Info</h4>
@@ -71,6 +71,7 @@
             <label for="country">Country</label>
             <select class="custom-select d-block w-100" id="country">
               <option value="">Choose...</option>
+              <!-- credit to https://gist.github.com/psamaan/6187095 for option list -->
               <option value="United States">United States</option>
               <option value="United Kingdom">United Kingdom</option>
               <option value="Afghanistan">Afghanistan</option>
@@ -327,9 +328,50 @@
           <label for="summary">Summary</label>
           <textarea class="form-control" id="summary" rows="3" placeholder="Brief introduction to yourself and what you're looking for" value=""></textarea>
         </div>
+        <h4 class="mb-3">Experience</h4>
+        <div id="jobExperience">
+          <div class="mb-3 jobInput" id="jobInput0">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="employer0">Employer</label>
+                <input type="text" class="form-control" id="employer0" placeholder="Company Name" value="">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="title0">Job Title</label>
+                <input type="text" class="form-control" id="title0" placeholder="Job title" value="">
+              </div>
+            </div>
+            <textarea class="form-control" id="jobdesc0" rows="4" placeholder="Description of duties" value=""></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-11 mb-3">
+          </div>
+          <div class="col-md-1 mb-3">
+            <button class="btn btn-sq btn-info float-right" id="addJobExp" type="button">+</button>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Build resume</button>
+        </div>
       </form>
     </div>
   </body>
+  <script>
+    var numJobs = 1;
+    $('#addJobExp').on('click', (e) => {
+      var newInput = '<div class="mb-3 jobInput" id="jobInput' + numJobs +
+        '"><div class="row"><div class="col-md-6 mb-3"><label for="employer' + numJobs + 
+        '">Employer</label><input type="text" class="form-control" id="employer' + numJobs +
+        '" placeholder="Company Name" value=""></div><div class="col-md-6 mb-3"><label for="title' + 
+        numJobs + '">Job Title</label><input type="text" class="form-control" id="title' + 
+        numJobs + '" placeholder="Job title" value=""></div></div><textarea class="form-control" id="jobdesc' +
+        numJobs + '" rows="4" placeholder="Description of duties" value=""></textarea></div>';
+      $('#jobExperience').append(newInput);
+      numJobs++;
+    });
+  </script>
+
 </html>
 
 
