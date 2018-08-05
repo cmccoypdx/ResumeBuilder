@@ -7,16 +7,6 @@
 
     <title>Resume Builder</title>
 
-    <script type="text/javascript" 
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
-
-    <link rel="stylesheet" type="text/css" 
-                           href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css" 
-                           />
-    <script type="text/javascript" 
-            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js">
-    </script>
   </head>
 
   <body class="bg-light">
@@ -330,7 +320,7 @@
         </div>
         <h4 class="mb-3">Experience</h4>
         <div id="jobExperience">
-          <div class="mb-3 jobInput" id="jobInput0">
+          <div id="jobInput0">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="employer0">Employer</label>
@@ -341,7 +331,7 @@
                 <input type="text" class="form-control" id="title0" placeholder="Job title" value="">
               </div>
             </div>
-            <textarea class="form-control" id="jobdesc0" rows="4" placeholder="Description of duties" value=""></textarea>
+            <textarea class="form-control mb-3" id="jobdesc0" rows="4" placeholder="Description of duties" value=""></textarea>
           </div>
         </div>
         <div class="row">
@@ -351,14 +341,53 @@
             <button class="btn btn-sq btn-info float-right" id="addJobExp" type="button">+</button>
           </div>
         </div>
-        <div class="col-md-6 mb-3">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Build resume</button>
+        <h4 class="mb-3">Skills</h4>
+        <textarea class="form-control mb-3" id="skills" rows="2" placeholder="Comma-separated list of skills i.e. Excel, Python, Customer service" value=""></textarea>
+        <h4 class="mb-3">Education</h4>
+        <div id="education">
+          <div id="eduInput0">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="school0">School</label>
+                <input type="text" class="form-control" id="school0" placeholder="RB University" value="">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="degree0">Degree</label>
+                <input type="text" class="form-control" id="degree0" placeholder="Bachelor's of Job Hunting" value="">
+              </div>
+            </div>
+            <label for="desc0">Description <span class="text-muted">(Optional)</span></label>
+            <textarea class="form-control mb-3" id="desc0" placeholder="GPA, honors, club memberships, etc." value=""></textarea>          
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-11 mb-3">
+          </div>
+          <div class="col-md-1 mb-3">
+            <button class="btn btn-sq btn-info float-right" id="addSchool" type="button">+</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Build resume</button>
+          </div>
         </div>
       </form>
     </div>
+    <script type="text/javascript" 
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+
+    <link rel="stylesheet" type="text/css" 
+                           href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css"/>
+    <script type="text/javascript" 
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js">
+    </script>
   </body>
   <script>
     var numJobs = 1;
+    var numSchools = 1;
     $('#addJobExp').on('click', (e) => {
       var newInput = '<div class="mb-3 jobInput" id="jobInput' + numJobs +
         '"><div class="row"><div class="col-md-6 mb-3"><label for="employer' + numJobs + 
@@ -370,6 +399,19 @@
       $('#jobExperience').append(newInput);
       numJobs++;
     });
+    $('#addSchool').on('click', (e) => {
+      var newInput = '<div id="eduInput' + numSchools + 
+        '"><div class="row"><div class="col-md-6 mb-3"><label for="school' + numSchools + 
+        '">School</label><input type="text" class="form-control" id="school' + numSchools + 
+        '" placeholder="RB University" value=""></div><div class="col-md-6 mb-3"><label for="degree'
+      + numSchools + '">Degree</label><input type="text" class="form-control" id="degree' + 
+        numSchools + '" placeholder="Bachelor\'s of Job Hunting" value=""></div></div><label for="desc' +
+        numSchools + '">Description <span class="text-muted">(Optional)</span></label><textarea class="form-control mb-3" id="desc' + 
+        numSchools + '" placeholder="GPA, honors, club memberships, etc." value=""></textarea></div>'
+      $('#education').append(newInput);
+      numSchools++;
+    });
+ 
   </script>
 
 </html>
