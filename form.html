@@ -410,6 +410,27 @@
           </div>
         </div>
 
+        <h4 class="mb-3">Miscellaneous</h4>
+        <div id="misc">
+          <div class="misc0">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="title0">Title</label>
+                <input type="text" class="form-control" id="title0" placeholder="Title of additional field" value="">
+              </div>
+            </div>
+            <label for="detail0">Details</label>
+            <textarea class="form-control mb-3" id="detail0" rows="3" placeholder="Content of additional field" value=""></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-11 mb-3">
+          </div>
+          <div class="col-md-1 mb-3">
+            <button class="btn btn-sq btn-info float-right" id="addMisc" type="button">+</button>
+          </div>
+        </div>
 
         <div class="row">
           <div class="col-md-5 mb-3">
@@ -432,6 +453,7 @@
     var numJobs = 1;
     var numSchools = 1;
     var numRefs = 1;
+    var numMisc = 1;
     $('#addJobExp').on('click', (e) => {
       var newInput = '<div class="mb-3 jobInput" id="jobInput' + numJobs +
         '"><div class="row"><div class="col-md-6 mb-3"><label for="employer' + numJobs + 
@@ -456,7 +478,6 @@
       numSchools++;
     });
     $('#addRef').on('click', (e) => {
-      console.log(numRefs);
       var newInput = '<div id="ref' + numRefs + '"><div class="row"><div class="col-md-6 mb-3"><label for="first'
         + numRefs + '">First name</label><input type="text" class="form-control" id="first' + numRefs +
         '" placeholder="First" value=""></div><div class="col-md-6 mb-3"><label for "last' + numRefs +
@@ -471,7 +492,16 @@
       $('#references').append(newInput);
       numRefs++;
     });
- 
+    $('#addMisc').on('click', (e) => {
+      var newInput = '<div class="misc' + numMisc +
+        '"><div class="row"><div class="col-md-6 mb-3"><label for="title' + numMisc + 
+        '">Title</label><input type="text" class="form-control" id="title' + numMisc +
+        '" placeholder="Title of additional field" value=""></div></div><label for="detail' + numMisc +
+        '">Details</label><textarea class="form-control mb-3" id="detail' + numMisc +
+        '" rows="3" placeholder="Content of additional field" value=""></textarea></div>';
+      $('#misc').append(newInput);
+      numMisc++; 
+    });
   </script>
 
 </html>
