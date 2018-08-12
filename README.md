@@ -1,6 +1,5 @@
 # ResumeBuilder
-Copyright 2018 Colin McCoy
-
+Copyright 2018 Colin McCoy<br/>
 Quickly and easily create an online resume, with no coding skills required.
 
 ### Dependencies
