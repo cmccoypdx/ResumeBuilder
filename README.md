@@ -18,4 +18,4 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 ### Dependencies
-Node.js and Express for running server. Middleware body-parser for parsing form submission. All installable with npm. 
+Node.js and Express for running server. Middleware 'body-parser' for parsing form submission. All installable with npm. 
