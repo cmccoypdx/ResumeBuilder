@@ -17,9 +17,9 @@
         <p class="lead">Enter your details here to build your custom web resume. If a field
         is not applicable to you, leave it blank.</p>
       </div>
-      <div class="shadow-sm my-3 p-3 bg-white rounded">
-        <h4 class="mb-3">Basic Info</h4>
-        <form class="needs-validation" target="_blank" action="/interactive" method="post" novalidate>
+      <form class="needs-validation" target="_blank" action="/interactive" method="post" novalidate>
+        <div class="shadow-sm my-3 p-3 bg-white rounded">
+          <h4 class="mb-3">Basic Info</h4>
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName">First name</label>
@@ -325,132 +325,136 @@
             <label for="summary">Summary</label>
             <textarea class="form-control" id="summary" name="summary" rows="3" placeholder="Brief introduction to yourself and what you're looking for" value=""></textarea>
           </div>
-      </div>
-      <div class="shadow-sm my-3 p-3 bg-white rounded">
-        <h4 class="mb-3">Experience</h4>
-        <div id="jobExperience">
-          <div id="jobInput0">
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="employer0">Employer</label>
-                <input type="text" class="form-control" id="employer0" name="employer0" placeholder="Company Name" value="">
+        </div>
+        <div class="shadow-sm my-3 p-3 bg-white rounded">
+          <h4 class="mb-3">Experience</h4>
+          <div id="jobExperience">
+            <div id="jobInput0">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="employer0">Employer</label>
+                  <input type="text" class="form-control" id="employer0" name="employer0" placeholder="Company Name" value="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="title0">Job Title</label>
+                  <input type="text" class="form-control" id="title0" name="title0" placeholder="Job title" value="">
+                </div>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="title0">Job Title</label>
-                <input type="text" class="form-control" id="title0" name="title0" placeholder="Job title" value="">
-              </div>
+              <textarea class="form-control mb-3" id="jobdesc0" name="jobdesc0" rows="4" placeholder="Description of duties" value=""></textarea>
             </div>
-            <textarea class="form-control mb-3" id="jobdesc0" name="jobdesc0" rows="4" placeholder="Description of duties" value=""></textarea>
+          </div>
+          <div class="row">
+            <div class="col-md-11 mb-3">
+            </div>
+            <div class="col-md-1 mb-3">
+              <button class="btn btn-sq btn-info float-right" id="addJobExp" type="button">+</button>
+            </div>
           </div>
         </div>
+        <div class="shadow-sm my-3 p-3 bg-white rounded">
+          <h4 class="mb-3">Skills</h4>
+          <textarea class="form-control mb-3" id="skills" name="skills" rows="2" placeholder="Comma-separated list of skills i.e. Excel, Python, Customer service" value=""></textarea>
+        </div>
+
+        <div class="shadow-sm my-3 p-3 bg-white rounded">
+          <h4 class="mb-3">Education</h4>
+          <div id="education">
+            <div id="eduInput0">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="school0">School</label>
+                  <input type="text" class="form-control" id="school0" name="school0" placeholder="RB University" value="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="degree0">Degree</label>
+                  <input type="text" class="form-control" id="degree0" name="degree0" placeholder="Bachelor's of Job Hunting" value="">
+                </div>
+              </div>
+              <label for="desc0">Description <span class="text-muted">(Optional)</span></label>
+              <textarea class="form-control mb-3" id="desc0" name="desc0" rows="2"placeholder="GPA, honors, club memberships, etc." value=""></textarea>          
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-11 mb-3">
+            </div>
+            <div class="col-md-1 mb-3">
+              <button class="btn btn-sq btn-info float-right" id="addSchool" type="button">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="shadow-sm my-3 p-3 bg-white rounded">
+          <h4 class="mb-3">References</h4>
+          <div id="references">
+            <div id="ref0">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="first0">First name</label>
+                  <input type="text" class="form-control" id="first0" name="first0" placeholder="First" value="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for "last0">Last name</label>
+                  <input type="text" class="form-control" id="last0" name="last0" placeholder="Last" value="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="email0">Email address</label>
+                  <input type="text" class="form-control" id="email0" name="email0" placeholder="formerboss@old.org" value="">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone0">Phone #</label>
+                  <input type="text" class="form-control" id="phone0" name="phone0" placeholder="555-555-5555" value="">
+                </div>
+              </div>
+              <label for="about0">About</label>
+              <input type="text" class="form-control mb-3" id="about0" name="about0" placeholder="Very brief description of reference" value="">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-11 mb-3">
+            </div>
+            <div class="col-md-1 mb-3">
+              <button class="btn btn-sq btn-info float-right" id="addRef" type="button">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="shadow-sm my-3 p-3 bg-white rounded">
+          <h4 class="mb-3">Miscellaneous</h4>
+          <div id="misc">
+            <div class="misc0">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="category0">Category</label>
+                  <input type="text" class="form-control" id="category0" name="category0" placeholder="Title of additional field" value="">
+                </div>
+              </div>
+              <label for="detail0">Details</label>
+              <textarea class="form-control mb-3" id="detail0" name="detail0" rows="3" placeholder="Content of additional field" value=""></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-11 mb-3">
+            </div>
+            <div class="col-md-1 mb-3">
+              <button class="btn btn-sq btn-info float-right" id="addMisc" type="button">+</button>
+            </div>
+          </div>
+        </div>
+
         <div class="row">
-          <div class="col-md-11 mb-3">
-          </div>
-          <div class="col-md-1 mb-3">
-            <button class="btn btn-sq btn-info float-right" id="addJobExp" type="button">+</button>
+          <div class="col-md-5 mb-3">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Build resume</button>
           </div>
         </div>
-      </div>
-      <div class="shadow-sm my-3 p-3 bg-white rounded">
-        <h4 class="mb-3">Skills</h4>
-        <textarea class="form-control mb-3" id="skills" name="skills" rows="2" placeholder="Comma-separated list of skills i.e. Excel, Python, Customer service" value=""></textarea>
-      </div>
-
-      <div class="shadow-sm my-3 p-3 bg-white rounded">
-        <h4 class="mb-3">Education</h4>
-        <div id="education">
-          <div id="eduInput0">
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="school0">School</label>
-                <input type="text" class="form-control" id="school0" name="school0" placeholder="RB University" value="">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="degree0">Degree</label>
-                <input type="text" class="form-control" id="degree0" name="degree0" placeholder="Bachelor's of Job Hunting" value="">
-              </div>
-            </div>
-            <label for="desc0">Description <span class="text-muted">(Optional)</span></label>
-            <textarea class="form-control mb-3" id="desc0" name="desc0" rows="2"placeholder="GPA, honors, club memberships, etc." value=""></textarea>          
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-11 mb-3">
-          </div>
-          <div class="col-md-1 mb-3">
-            <button class="btn btn-sq btn-info float-right" id="addSchool" type="button">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="shadow-sm my-3 p-3 bg-white rounded">
-        <h4 class="mb-3">References</h4>
-        <div id="references">
-          <div id="ref0">
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="first0">First name</label>
-                <input type="text" class="form-control" id="first0" name="first0" placeholder="First" value="">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for "last0">Last name</label>
-                <input type="text" class="form-control" id="last0" name="last0" placeholder="Last" value="">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="email0">Email address</label>
-                <input type="text" class="form-control" id="email0" name="email0" placeholder="formerboss@old.org" value="">
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="phone0">Phone #</label>
-                <input type="number" class="form-control" id="phone0" name="phone0" placeholder="555-555-5555" value="">
-              </div>
-            </div>
-            <label for="about0">About</label>
-            <input type="text" class="form-control mb-3" id="about0" name="about0" placeholder="Very brief description of reference" value="">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-11 mb-3">
-          </div>
-          <div class="col-md-1 mb-3">
-            <button class="btn btn-sq btn-info float-right" id="addRef" type="button">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="shadow-sm my-3 p-3 bg-white rounded">
-        <h4 class="mb-3">Miscellaneous</h4>
-        <div id="misc">
-          <div class="misc0">
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="title0">Title</label>
-                <input type="text" class="form-control" id="title0" name="title0" placeholder="Title of additional field" value="">
-              </div>
-            </div>
-            <label for="detail0">Details</label>
-            <textarea class="form-control mb-3" id="detail0" name="detail0" rows="3" placeholder="Content of additional field" value=""></textarea>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-11 mb-3">
-          </div>
-          <div class="col-md-1 mb-3">
-            <button class="btn btn-sq btn-info float-right" id="addMisc" type="button">+</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-5 mb-3">
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Build resume</button>
-        </div>
-      </div>
-        </form>
+        <input type="text" class="form-control" id="numJobs" name="numJobs" value="1" style="display:none">
+        <input type="text" class="form-control" id="numSchools" name="numSchools" value="1" style="display:none">
+        <input type="text" class="form-control" id="numRefs" name="numRefs" value="1" style="display:none">
+        <input type="text" class="form-control" id="numMisc" name="numMisc" value="1" style="display:none">
+      </form>
     </div>
 
     <script type="text/javascript" 
@@ -478,6 +482,7 @@ $('#addJobExp').on('click', (e) => {
     numJobs + '" name="jobdesc' + numJobs + '" rows="4" placeholder="Description of duties" value=""></textarea></div>';
   $('#jobExperience').append(newInput);
   numJobs++;
+  $('#numJobs').val(numJobs);
 });
 $('#addSchool').on('click', (e) => {
   var newInput = '<div id="eduInput' + numSchools + 
@@ -490,6 +495,7 @@ $('#addSchool').on('click', (e) => {
     numSchools + '" name="desc' + numSchools + '" placeholder="GPA, honors, club memberships, etc." value=""></textarea></div>';
   $('#education').append(newInput);
   numSchools++;
+  $('#numSchools').val(numSchools);
 });
 $('#addRef').on('click', (e) => {
   var newInput = '<div id="ref' + numRefs + '"><div class="row"><div class="col-md-6 mb-3"><label for="first'
@@ -499,22 +505,24 @@ $('#addRef').on('click', (e) => {
     numRefs + '" name="last' + numRefs + '" placeholder="Last" value=""></div></div><div class="row"><div class="col-md-6 mb-3"><label for="email'
     + numRefs + '">Email address</label><input type="text" class="form-control" id="email' + 
     numRefs + '" name="email' + numRefs + '" placeholder="formerboss@old.org" value=""></div><div class="col-md-6 mb-3"><label for="phone'
-    + '">Phone #</label><input type="number" class="form-control" id="phone' + numRefs + 
+    + '">Phone #</label><input type="text" class="form-control" id="phone' + numRefs + 
     '" name="phone' + numRefs + '" placeholder="555-555-5555" value=""></div></div><label for="about' + numRefs +
     '">About</label><input type="text" class="form-control mb-3" id="about' + numRefs +
     '" name="about' + numRefs + '" placeholder="Very brief description of reference" value=""></div>';
   $('#references').append(newInput);
   numRefs++;
+  $('#numRefs').val(numRefs);
 });
 $('#addMisc').on('click', (e) => {
   var newInput = '<div class="misc' + numMisc +
-    '"><div class="row"><div class="col-md-6 mb-3"><label for="title' + numMisc + 
-    '">Title</label><input type="text" class="form-control" id="title' + numMisc +
-    '" name="title' + numMisc + '" placeholder="Title of additional field" value=""></div></div><label for="detail' + numMisc +
+    '"><div class="row"><div class="col-md-6 mb-3"><label for="category' + numMisc + 
+    '">Category</label><input type="text" class="form-control" id="category' + numMisc +
+    '" name="category' + numMisc + '" placeholder="Title of additional field" value=""></div></div><label for="detail' + numMisc +
     '">Details</label><textarea class="form-control mb-3" id="detail' + numMisc +
     '" name="detail' + numMisc + '" rows="3" placeholder="Content of additional field" value=""></textarea></div>';
   $('#misc').append(newInput);
   numMisc++; 
+  $('#numMisc').val(numMisc);
 });
 (function() {
   'use strict';
