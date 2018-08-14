@@ -40,7 +40,7 @@ rbs.post('/interactive', urlencodedParser, (req, res) => {
   res.write('</div>');
   res.write('</div>');
   res.write('</nav>');
-  res.write('<div class="jumbotron jumbotron-fluid bg-info">');
+  res.write('<div class="jumbotron jumbotron-fluid bg-info shadow-sm">');
   res.write('<div class="container">');
   res.write('<h1 class="display-3 text-white">' + req.body.firstName + ' ' + req.body.lastName + '</h1>');
   res.write('<h4 class="display-5 text-white">' + req.body.summary + '</p>');
@@ -94,16 +94,20 @@ rbs.post('/interactive', urlencodedParser, (req, res) => {
   }
   res.write('<div class="shadow-sm my-3 p-3 bg-white rounded">');
   res.write('<h2 class="display-5" id="contact">Contact</h2>');
+  res.write('<div class="row">');
+  res.write('<div class="col-md-5">');
   res.write('<p><span class="text-info">Phone: </span>' + req.body.phone + 
-    '<br><span class="text-info">Email: </span>' + req.body.email +
-    '<br><span class="text-info">Address:</span><br>' + req.body.address + 
-    '<br>');
+    '<br><span class="text-info">Email: </span>' + req.body.email + '</div>');
+  res.write('<div class="col-md-1">');
+  res.write('<p><span class="text-info">Address:</span><br></p></div>');
+  res.write('<div class="col-md-6"><p>' + req.body.address + '<br>');
   if (req.body.address2 != '')
   {
     res.write(req.body.address2 + '<br>');
   }
   res.write(req.body.city + ', ' + req.body.state + '<br>' + req.body.zip + 
     '<br>' + req.body.country + '</p>');
+  res.write('</div></div>');
   res.write('</div>');
   res.write('</div>');
   res.write('<script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css"/><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>');
