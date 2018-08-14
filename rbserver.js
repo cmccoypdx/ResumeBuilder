@@ -17,14 +17,37 @@ rbs.post('/interactive', urlencodedParser, (req, res) => {
   res.write('<title>' + req.body.firstName + ' ' + req.body.lastName + ' - Resume</title>');
   res.write('</head>');
   res.write('<body class="bg-light">');
-  res.write('<div class="jumbotron bg-info">');
+  res.write('<nav class="navbar navbar-expand-sm bg-secondary shadow-sm" id="navbar">');
+  res.write('<div class="container">');
+  res.write('<div class="collapse navbar-collapse" id="navcontent">');
+  res.write('<ul class="navbar-nav mr-auto">');
+  res.write('<li class="nav-item active">');
+  res.write('<a class="nav-link text-white" href="#contact">Contact</a>');
+  res.write('</li>');
+  res.write('<li class="nav-item active">');
+  res.write('<a class="nav-link text-white" href="#refs">References</a>');
+  res.write('</li>');
+  res.write('<li class="nav-item active">');
+  res.write('<a class="nav-link text-white" href="#skills">Skills</a>');
+  res.write('</li>');
+  res.write('<li class="nav-item active">');
+  res.write('<a class="nav-link text-white" href="#edu">Education</a>');
+  res.write('</li>');
+  res.write('<li class="nav-item active">');
+  res.write('<a class="nav-link text-white" href="#exp">Experience</a>');
+  res.write('</li>');
+  res.write('</ul>');
+  res.write('</div>');
+  res.write('</div>');
+  res.write('</nav>');
+  res.write('<div class="jumbotron jumbotron-fluid bg-info">');
   res.write('<div class="container">');
   res.write('<h1 class="display-3 text-white">' + req.body.firstName + ' ' + req.body.lastName + '</h1>');
   res.write('<h4 class="display-5 text-white">' + req.body.summary + '</p>');
   res.write('</div></div>');
   res.write('<div class="container">');
   res.write('<div class="shadow-sm my-3 p-3 bg-white rounded">');
-  res.write('<h2 class="display-5">Experience</h2>');
+  res.write('<h2 class="display-5" id="exp">Experience</h2>');
   for (var i = 0; i < parseInt(req.body.numJobs); i++)
   {
     res.write('<h4 class="display-5 text-info">' + req.body['employer' + i] + '</h4>');
@@ -33,7 +56,7 @@ rbs.post('/interactive', urlencodedParser, (req, res) => {
   }
   res.write('</div>');
   res.write('<div class="shadow-sm my-3 p-3 bg-white rounded">');
-  res.write('<h2 class="display-5">Education</h2>');
+  res.write('<h2 class="display-5" id="edu">Education</h2>');
   for (var i = 0; i < parseInt(req.body.numSchools); i++)
   {
     res.write('<h4 class="display-5 text-info">' + req.body['school' + i] +'</h4>');
@@ -42,7 +65,7 @@ rbs.post('/interactive', urlencodedParser, (req, res) => {
   }
   res.write('</div>');
   res.write('<div class="shadow-sm my-3 p-3 bg-white rounded">');
-  res.write('<h2 class="display-5">Skills</h2>');
+  res.write('<h2 class="display-5" id="skills">Skills</h2>');
   var skills = req.body.skills.split(',');
   res.write('<p><ul>');
   for (var s of skills) {
@@ -51,7 +74,7 @@ rbs.post('/interactive', urlencodedParser, (req, res) => {
   res.write('</ul></p>');
   res.write('</div>');
   res.write('<div class="shadow-sm my-3 p-3 bg-white rounded">');
-  res.write('<h2 class="display-5">References</h2>');
+  res.write('<h2 class="display-5" id="refs">References</h2>');
   for (var i = 0; i < parseInt(req.body.numRefs); i++)
   {
     res.write('<h4 class="display-5 text-info">' + req.body['first' + i] + ' ' + req.body['last' + i] + '</h4>');
@@ -70,7 +93,7 @@ rbs.post('/interactive', urlencodedParser, (req, res) => {
     }
   }
   res.write('<div class="shadow-sm my-3 p-3 bg-white rounded">');
-  res.write('<h2 class="display-5">Contact</h2>');
+  res.write('<h2 class="display-5" id="contact">Contact</h2>');
   res.write('<p><span class="text-info">Phone: </span>' + req.body.phone + 
     '<br><span class="text-info">Email: </span>' + req.body.email +
     '<br><span class="text-info">Address:</span><br>' + req.body.address + 
