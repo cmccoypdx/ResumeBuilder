@@ -38,6 +38,7 @@ rbs.get('/', (req, res) => {
 });
 
 rbs.post('/interactive', urlencodedParser, (req, res) => {
+  res.status(200);
   res.write('<html lang="en"><head><meta http-equiv="Content-Type" context="text/html" charset="UTF-8" />');
   res.write('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=" />');
   res.write('<title>' + req.body.firstName + ' ' + req.body.lastName + ' - Resume</title>');
